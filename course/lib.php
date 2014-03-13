@@ -3147,6 +3147,11 @@ function course_ajax_enabled($course) {
             return false;
         }
     }
+    
+    // Check IE Version and disable ajax for versions below 9.0
+    if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) { 
+        return false;
+    }
 
     // All conditions have been met so course ajax should be enabled
     return true;
