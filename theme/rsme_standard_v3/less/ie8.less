@@ -1,0 +1,47 @@
+body.ie8
+{
+	/* Fixes Breadcrumbs overlapping */
+	.breadcrumb li 
+	{
+		margin-right: 1px;
+	}
+	/* Fixes Activity Labels been wrapped */
+	.section .activity .activityinstance, .section .activity .activityinstance div
+	{
+		display:inline;
+		
+		> a
+		{
+			display:inline;
+		}
+	}
+	.mod-indent-outer
+	{
+		width:100%;
+	}
+	/* Fixes category listing labels falling way outside their box */
+	.category-listing .row
+	{
+		margin-left:0;
+	}
+	/* Fix Icon Sizes */
+	.block-control-actions img, .section-cm-edit-actions img, .editing_move img, img.tree-icon
+	{
+		max-width:none;
+		max-height:none;
+	}
+	.block_online_users .content .list li.listentry .user
+	{
+		float:none;
+	}
+	
+	.list_block.block .unlist > LI > .column
+	{
+		display:inline;
+	}
+	
+	TABLE.ygtvtable
+	{
+		width:100%;
+	}
+}

@@ -1,0 +1,95 @@
+.navbar-inner
+{
+	background:url([[pix:theme|layout/navbar]]) repeat-x;
+	border:none;
+	border-radius:0;
+	padding:0;
+	filter:none; /* Fix IE8 */
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle
+{
+	background:@darkRed;
+	color:@white;
+}
+
+.navbar .nav > li > a
+{
+	margin-top:2px;
+	padding:7px 15px;
+	text-shadow:none;
+	color:@white;
+	font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+	
+	&:focus, &:hover
+	{
+		color:@white;
+		background:@mediumGreen;
+	}
+}
+
+.dropdown-menu, .dropdown-submenu
+{
+	background:@darkGreen;
+	border-radius:0;
+	
+	box-shadow:0;
+	border-top:1px solid @darkRed;
+	border-left:none;
+	border-right:none;
+	border-bottom:2px solid @darkRed;
+	
+	> li > a
+	{
+		color:@white;
+		
+		&:hover, &:focus
+		{
+			background:@mediumGreen;
+		}
+	}
+}
+
+.dropdown-menu:before, .dropdown-menu:after {
+    border: none !important;
+    content: "" !important;
+}
+
+.dropdown-submenu
+{
+	border:0;
+	filter:none;
+	
+	> .dropdown-menu
+	{
+		border:0;
+		border-radius:0;
+		
+		border-top:1px solid @darkRed;
+		border-left:none;
+		border-right:none;
+		border-bottom:2px solid @darkRed;
+		
+		background:@mediumGreen;
+		box-shadow:none;
+	}
+}
+
+.dropdown-submenu:hover > a, .dropdown-submenu:focus > a
+{
+	background:@mediumGreen;
+	filter:none;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus
+{
+	background:@darkRed;
+	filter:none;
+}
+
+.navbar .nav li.dropdown > .dropdown-toggle .caret
+{
+	border-top-color:@white;
+	border-bottom-color:@white;
+	margin-left:3px;
+} 

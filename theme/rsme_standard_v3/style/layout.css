@@ -1,0 +1,98 @@
+body {
+  padding-top: 0;
+}
+.header-banner {
+  background: #b4af91;
+  padding: 10px;
+}
+.header-banner > a {
+  margin-left: 18px;
+}
+.header-banner > a img {
+  width: 100px;
+  height: 100px;
+}
+.user-card {
+  background: #787746;
+  width: 300px;
+  color: #FAFAFA;
+  padding: 10px;
+  border-color: #444427;
+}
+.user-card .user-image {
+  float: left;
+  width: 80px;
+  /* Fix IE8 Showing Image as 100% */
+
+  max-width: none;
+  /* Fix IE8 Showing Image as 100% */
+
+}
+.user-card .user-image img {
+  border: 1px solid #323232;
+}
+.user-card .user-actions {
+  margin-left: 100px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+.user-card .user-actions .welcome {
+  font-size: 1.2em;
+}
+.user-card .user-actions p {
+  margin: 0 0 3px 0;
+}
+.user-card .user-actions ul {
+  margin-bottom: 0px;
+}
+.user-card .user-actions a {
+  color: #FAFAFA;
+  text-decoration: none;
+}
+.user-card .user-actions .card-button {
+  width: 49%;
+  display: block;
+  float: left;
+}
+.user-card .user-actions .card-button a {
+  padding: 6px 2px;
+  text-align: center;
+  display: block;
+}
+.user-card .user-actions .card-button a:hover,
+.user-card .user-actions .card-button a:active {
+  background: #444427;
+}
+.navbar-inner {
+  background: url([[pix:theme|layout/navbar]]) repeat-x;
+  border: none;
+  border-radius: 0;
+  filter: none;
+  /* Fix IE8 */
+
+}
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+  background: #be3526;
+  color: #FAFAFA;
+}
+.navbar .nav > li > a {
+  margin-top: 2px;
+  padding: 7px 15px;
+  text-shadow: none;
+  color: #FAFAFA;
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+}
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+  color: #FAFAFA;
+  background: #be3526;
+}
+.dropdown-menu {
+  background: #40411F;
+  border-radius: 0;
+}
+.dropdown-menu > li > a {
+  color: #FAFAFA;
+}

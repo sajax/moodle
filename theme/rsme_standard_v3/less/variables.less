@@ -1,0 +1,27 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+
+@mediumGreen: #8a885f;
+@lightGreen: #b5b092;
+@darkGreen: #40411f;
+@darkRed: #be3526;
+@grey: #ecebe5;
+@white: #FAFAFA;
+@black: #232323;
+
+@defautBoxBorder: @grey;
+@defaultBoxbackground: #F5F5F5;
+
+.box-styling
+{
+	background-color: @defaultBoxbackground;
+	border: 1px solid @defautBoxBorder;
+	.border-radius(@baseBorderRadius);
+}
+
+.box-mixin {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: @baseLineHeight;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  .box-styling
+}

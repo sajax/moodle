@@ -1,0 +1,138 @@
+body
+{
+	padding-top:0;
+	background:@grey;
+	
+	font-size:0.85em;
+}
+
+.header-banner
+{
+	background:@lightGreen;
+	padding:10px;
+	max-width:100%;
+}
+
+.header-banner > a
+{
+	margin-left:18px;
+}
+
+
+.header-banner > a img
+{
+	width:100px;
+	height:100px;
+}
+
+.user-card
+{
+	background:@mediumGreen;
+	
+	width:300px;
+	
+	color:@white;
+	
+	padding:10px;
+	
+	border-color:@darkGreen;
+	
+	font-size:0.85em;
+	font-weight:bold;
+	
+	margin:0;
+	
+	.user-image
+	{
+		float:left;
+		width:80px; /* Fix IE8 Showing Image as 100% */
+		max-width:none; /* Fix IE8 Showing Image as 100% */
+		
+		img
+		{
+			border:1px solid @black;
+		}
+	}
+	
+	.welcome
+	{
+		font-size:1.2em;
+	}
+	
+	.card-button
+	{
+		width:49%;
+		display:block;
+		float:left;
+		
+		a
+		{
+			padding:6px 2px;
+			text-align:center;
+			display:block;
+			
+			color:@white;
+			text-decoration:none;
+			
+			&:hover, &:active
+			{
+				background:@darkGreen;
+			}
+		}
+	}
+	
+	.user-actions
+	{
+		margin-left:100px;
+		
+		p
+		{
+			margin:0 0 3px 0;
+		}
+		
+		ul
+		{
+			margin-bottom:0px;
+		}
+	}
+}
+
+#page-footer
+{
+	border-top:none;
+}
+
+footer
+{
+	font-size:0.85em;
+	
+	.logininfo
+	{
+		font-weight:bold;
+	}
+}
+
+#banner-footer
+{
+	background:url([[pix:theme|layout/navbar]]) repeat-x;
+	height:40px;
+	line-height:40px;
+	padding:0 16px;
+	font-weight:bold;
+	margin-top:16px;
+	
+	text-align:left;
+	color:@white;
+	
+	a
+	{
+		color:@white;
+	}
+}
+
+#region-main #notice
+{
+	text-align:center;
+	margin:auto;
+}
+

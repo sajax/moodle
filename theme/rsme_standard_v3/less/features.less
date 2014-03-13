@@ -1,0 +1,121 @@
+
+
+.notification-block
+{
+	.box-mixin;
+
+	border-width:2px;
+	
+	padding:10px;
+	
+	p
+	{
+		margin:0 0 8px 0;
+	}
+}
+
+.notification-link-icon, .notification-link-icon:link, .notification-link-icon:visited
+{
+
+	display:block;
+	text-align:center;
+	font-weight:bold;
+	
+	padding:4px 3px;
+	
+	&:hover, &:active
+	{	
+		text-decoration:none;
+	}
+	
+	span
+	{
+		margin-left:4px;
+	}
+	
+	img
+	{
+		width:48px;
+		height:48px;
+	}
+}
+
+.notification-info
+{
+	background-color: @infoBackground;
+	border-color: darken(@infoBorder, 5%);
+	color:@infoText;
+}
+
+a.notification-info
+{
+	background-color: darken(@infoBackground, 5%);
+	border:1px solid darken(@infoBorder, 10%);
+	color:@infoText;
+	
+	&:hover, &:active
+	{
+		background-color: darken(@infoBackground, 10%);
+		color:darken(@infoText, 10%);
+	}
+}
+
+.notification-warning
+{
+	background-color: @warningBackground;
+	border-color: darken(@warningBorder, 5%);
+	color:@warningText;
+}
+
+a.notification-warning
+{
+	background-color: darken(@warningBackground, 5%);
+	border:1px solid darken(@warningBorder, 10%);
+	color:@warningText;
+	
+	&:hover, &:active
+	{
+		background-color: darken(@warningBackground, 10%);
+		color:darken(@warningText, 10%);
+	}
+}
+
+.notification-error
+{
+	background-color: @errorBackground;
+	border-color: darken(@errorBorder, 5%);
+	color:@errorText;
+}
+
+a.notification-error
+{
+	background-color: darken(@errorBackground, 5%);
+	border:1px solid darken(@errorBorder, 10%);
+	color:@errorText;
+	
+	&:hover, &:active
+	{
+		background-color: darken(@errorBackground, 10%);
+		color:darken(@errorText, 10%);
+	}
+}
+
+.notification-success
+{
+	background-color: @successBackground;
+	border-color: darken(@successBorder, 5%);
+	color:@successText;
+}
+
+a.notification-success
+{
+	background-color: darken(@successBackground, 5%);
+	border:1px solid darken(@successBorder, 10%);
+	color:@successText;
+	
+	&:hover, &:active
+	{
+		background-color: darken(@successBackground, 10%);
+		color:darken(@successText, 10%);
+	}
+}

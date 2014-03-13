@@ -1,0 +1,28 @@
+#newmessageoverlay
+{
+	.box-mixin;
+	
+	background-color: @errorBackground;
+	border-color: @errorBorder;
+	color: @errorText;
+}
+
+.messagehistory
+{
+	.left, .right
+	{
+		.box-mixin;
+	}
+	
+	.left
+	{
+		background-color: @infoBackground;
+		border-color: @infoBorder;
+		color: @infoText;
+	}
+	
+	.right
+	{
+
+	}
+}
