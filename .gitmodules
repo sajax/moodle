@@ -1,0 +1,3 @@
+[submodule "mod/videofile"]
+	path = mod/videofile
+	url = https://github.com/lemonad/moodle-mod_videofile.git
