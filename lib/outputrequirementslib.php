@@ -1332,7 +1332,8 @@ class page_requirements_manager {
         // As of IE8 + YUI3.1.1 the reference stylesheet (firstthemesheet) gets
         // ignored whenever another resource is added until such time as a redraw
         // is forced, usually by moving the mouse over the affected element.
-        $code = html_writer::tag('script', '/** Required in order to fix style inclusion problems in IE with YUI **/', array('id'=>'firstthemesheet', 'type'=>'text/css'));
+        // CUSTOMISATION - Changed script type to text/javascript rather than text/css to solve issues with firewalls
+        $code = html_writer::tag('script', '/** Required in order to fix style inclusion problems in IE with YUI **/', array('id'=>'firstthemesheet', 'type'=>'text/javascript'));
 
         $urls = $this->cssthemeurls + $this->cssurls;
         foreach ($urls as $url) {
