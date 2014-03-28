@@ -1,1 +1,0 @@
-YUI.add("moodle-mod_videofile-videojs",function(e,t){M.mod_videofile=M.mod_videofile||{},M.mod_videofile.videojs={init:function(e,t,n,r){function o(){var e=document.getElementById(i.id()).parentElement.offsetWidth;i.width(e).height(e*s)}var i=videojs("videofile-"+e),s=r/n;o(),window.onresize=o}}},"@VERSION@",{requires:["base","node","event"]});
