@@ -49,7 +49,7 @@ class login_assistant_form_step3 extends moodleform {
       $mform->setDisableShortforms(true);
       
       $mform->addElement('text', 'servicenumber', 'Service Number');
-      $mform->setType('servicenumber', PARAM_RAW);
+      $mform->setType('servicenumber', PARAM_TEXT);
       
       $mform->addElement('text', 'surname', 'Surname');
       $mform->setType('surname', PARAM_TEXT);

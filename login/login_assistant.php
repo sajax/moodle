@@ -75,8 +75,30 @@ switch ($step) {
     }
     break;
   case "step4":
-    $servicenumber = required_param_array('servicenumber', PARAM_TEXT);
-    $surname = required_param_array('surname', PARAM_TEXT);
+    $servicenumber = required_param('servicenumber', PARAM_TEXT);
+    $surname = required_param('surname', PARAM_TEXT);
+    
+    $USER = $DB->get_record('user', array('username'=>$servicenumber));
+
+    // Found user and users lastname matches the given surname
+    if ($USER && strtolower($USER->lastname) == strtolower($surname))
+    {
+      $userauth = get_auth_plugin($USER->auth);
+      
+      if (!$userauth->can_change_password()) {
+        print_error('nopasswordchange', 'auth');
+      }
+      
+      if (!$userauth->user_update_password($USER, $data->newpassword1)) {
+        print_error('errorpasswordupdate', 'auth');
+      }
+      echo 'Found';
+    }
+    else
+    {
+      $OUTPUT->box('We could not find details matching the information you supplied. Please contact the Service Support Desk for further assistance.', 'alert alert-danger');
+    }
+    
     break;
 }
 
