@@ -19,6 +19,9 @@ $PAGE->set_pagelayout('login');
 // Define variables used in page
 $site = get_site();
 
+$strlogin     = get_string('login');
+
+$PAGE->navbar->add($strlogin, get_login_url());
 $PAGE->navbar->add('Login Assistant');
 
 $PAGE->set_title("$site->fullname: Login Assistant");
@@ -28,9 +31,19 @@ require_once('login_assistant_form.php');
 
 $step = optional_param('step', 'step1', PARAM_TEXT);
 
+// if you are logged in then you shouldn't be here!
+if (isloggedin() and !isguestuser()) {
+    redirect($CFG->wwwroot.'/index.php', get_string('loginalready'), 5);
+}
+
 echo $OUTPUT->header();
 echo $OUTPUT->heading('Login Assistant');
 
+// Build SSD Info Page, This is very lazy
+$ssd_info = '<h3>Service Support Desk</h3>' . $OUTPUT->box('Please contact the Service Support Desk for further assistance:', 'alert alert-info');
+$ssd_info .= '<dl class="dl-horizontal"><dt>Civ:</dt><dd>01634 82 99 44</dd><dt>Mil:</dt><dd>961 44 99 44</dd><dt>Email</dt><dd>rsme.ssd@hts.army.mod.uk</dd></dl>';
+
+$return_to_login = $OUTPUT->continue_button(new moodle_url("$CFG->httpswwwroot/login/index.php"));
 
 switch ($step) {
   case "step1":
@@ -40,7 +53,7 @@ switch ($step) {
     break;
   case "step2":
     $password = required_param('letterpassword', PARAM_TEXT);
-    if ($password == 'password')
+    if ($password == $CFG->login_assistant_password)
     {
       echo $OUTPUT->box('Please confirm the start/assembly date of your course');
       $frm = new login_assistant_form_step2();
@@ -48,7 +61,9 @@ switch ($step) {
     }
     else
     {
-      echo $OUTPUT->box('Sorry, we cannot continue with the password reset. Please contact the Service Support Desk on the information below for further assistance.');
+      echo $OUTPUT->box('Sorry, we are unable to continue with that password. Please double check the letter for your password and try again.', 'alert alert-error');
+      echo $ssd_info;
+      echo $return_to_login;
     }
     break;
   case "step3":
@@ -64,8 +79,11 @@ switch ($step) {
     // If cutoff_remainder is negative, still time remaining for loading. Add leeway and check it's still negative
     if ($cutoff_remainder < 0 && $cutoff_remainder + $leeway < 0)
     {
-      echo $OUTPUT->box('Your course start date is too far in the future. Your course is unlikely to ready or your account may not exist yet. User accounts and course are finalised 5 to 6 weeks before the course start date. Please try again later.');
+      echo $OUTPUT->box('Your course start date is too far in the future. Your course is unlikely to ready or your account may not exist yet. User accounts and courses on this date are expected around <strong>' . date('jS F o', ($start_date_stamp - (6 * 7 * 24 * 60 * 60))) . '</strong>', 'alert alert-error');
+      echo $ssd_info;
+      echo $return_to_login;
     }
+    
     
     if($cutoff_remainder > 0 || $cutoff_remainder + $leeway > 0)
     {
@@ -78,25 +96,31 @@ switch ($step) {
     $servicenumber = required_param('servicenumber', PARAM_TEXT);
     $surname = required_param('surname', PARAM_TEXT);
     
-    if ($user = $DB->get_record('user', array('auth'=>'manual', 'username'=>$servicenumber, 'mnethostid'=>$CFG->mnet_localhost_id))) {
+    $user = $DB->get_record('user', array('auth'=>'manual', 'username'=>$servicenumber, 'mnethostid'=>$CFG->mnet_localhost_id));
+    
+    // Check we found a user, check their lastnames match in lowercase and prevent any site admins from being reset this way
+    if ($user && strtolower($user->lastname) == strtolower($surname) && !is_siteadmin($user) && !$user->deleted) {
       $password = generate_password();
       $hashedpassword = hash_internal_user_password($password);
       // Lets update the user
       $DB->set_field('user', 'password', $hashedpassword, array('id'=>$user->id));
       set_user_preference('auth_forcepasswordchange', 1, $user);
       
-      echo $OUTPUT->box('Please now try and login using the password provided below.', 'alert alert-success');
+      echo $OUTPUT->box('Please now try and login using the password provided below. Copy and paste the password provided below, be sure to include any punctuation as well.', 'alert alert-success');
       echo '<div style="width:25%; font-size:1.7em; background:lightyellow; border:1px solid black; padding:1em; text-align:center; margin:1em auto;">' . $password . '</div>';
       unset($password);
       
-      echo $OUTPUT->continue_button(new moodle_url("$CFG->httpswwwroot/login/index.php"));
+      echo $return_to_login;
     }
     else
     {
-      $OUTPUT->box('We could not find details matching the information you supplied. Please contact the Service Support Desk for further assistance.', 'alert alert-danger');
+      echo $OUTPUT->box('We were unable to find any matching user accounts. Please contact the Service Support Desk below to have this investigated.', 'alert alert-error');
+      echo $ssd_info;
+      echo $return_to_login;
     }
-    
     break;
+  case "ssd":
+    echo '<h3>SSD Service Desk</h3>';
 }
 
 echo $OUTPUT->footer();
