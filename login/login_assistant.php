@@ -78,21 +78,18 @@ switch ($step) {
     $servicenumber = required_param('servicenumber', PARAM_TEXT);
     $surname = required_param('surname', PARAM_TEXT);
     
-    $USER = $DB->get_record('user', array('username'=>$servicenumber));
-
-    // Found user and users lastname matches the given surname
-    if ($USER && strtolower($USER->lastname) == strtolower($surname))
-    {
-      $userauth = get_auth_plugin($USER->auth);
+    if ($user = $DB->get_record('user', array('auth'=>'manual', 'username'=>$servicenumber, 'mnethostid'=>$CFG->mnet_localhost_id))) {
+      $password = generate_password();
+      $hashedpassword = hash_internal_user_password($password);
+      // Lets update the user
+      $DB->set_field('user', 'password', $hashedpassword, array('id'=>$user->id));
+      set_user_preference('auth_forcepasswordchange', 1, $user);
       
-      if (!$userauth->can_change_password()) {
-        print_error('nopasswordchange', 'auth');
-      }
+      echo $OUTPUT->box('Please now try and login using the password provided below.', 'alert alert-success');
+      echo '<div style="width:25%; font-size:1.7em; background:lightyellow; border:1px solid black; padding:1em; text-align:center; margin:1em auto;">' . $password . '</div>';
+      unset($password);
       
-      if (!$userauth->user_update_password($USER, $data->newpassword1)) {
-        print_error('errorpasswordupdate', 'auth');
-      }
-      echo 'Found';
+      echo $OUTPUT->continue_button(new moodle_url("$CFG->httpswwwroot/login/index.php"));
     }
     else
     {
