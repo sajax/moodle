@@ -12,10 +12,10 @@ class login_assistant_form_step1 extends moodleform {
       $mform->setDisableShortforms(true);
 
       $mform->addElement('password', 'letterpassword', 'Password');
-      $mform->setType('letterpassword', PARAM_RAW);
+      $mform->setType('letterpassword', PARAM_TEXT);
       
       $mform->addElement('hidden', 'step', 'step2');
-      $mform->setType('step', PARAM_RAW);
+      $mform->setType('step', PARAM_ACTION);
       
       $submitlabel = 'Next';
       $mform->addElement('submit', 'nextbutton', $submitlabel);
@@ -33,7 +33,7 @@ class login_assistant_form_step2 extends moodleform {
       $mform->addElement('date_selector', 'course_start_date', 'Course Start Date');
       
       $mform->addElement('hidden', 'step', 'step3');
-      $mform->setType('step', PARAM_RAW);
+      $mform->setType('step', PARAM_ACTION);
       
       $submitlabel = 'Next';
       $mform->addElement('submit', 'nextbutton', $submitlabel);
@@ -55,7 +55,7 @@ class login_assistant_form_step3 extends moodleform {
       $mform->setType('surname', PARAM_TEXT);
       
       $mform->addElement('hidden', 'step', 'step4');
-      $mform->setType('step', PARAM_RAW);
+      $mform->setType('step', PARAM_ACTION);
       
       $submitlabel = 'Next';
       $mform->addElement('submit', 'nextbutton', $submitlabel);
