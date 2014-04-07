@@ -48,79 +48,54 @@ $return_to_login = $OUTPUT->continue_button(new moodle_url("$CFG->httpswwwroot/l
 switch ($step) {
   case "step1":
     $frm = new login_assistant_form_step1();
-    echo $OUTPUT->box('To start please enter below the password provided on the letter/email you have received from us or the password you have been given that does not work.');
+    echo $OUTPUT->box('<p>If you have received a joining letter but have been unable to login using the password provided, you will be able to reset your password using the following process.</p><p>You will need the Serial Number, Password and Course Start Date provided on the RSME joining letter you have received. Please ensure you enter the serial and password exactly as they appear in the letter.</p>');
     echo $frm->display();
     break;
   case "step2":
     $password = required_param('letterpassword', PARAM_TEXT);
-    if ($password == $CFG->login_assistant_password)
-    {
-      echo $OUTPUT->box('Please confirm the start/assembly date of your course');
-      $frm = new login_assistant_form_step2();
-      echo $frm->display();
-    }
-    else
-    {
-      echo $OUTPUT->box('Sorry, we are unable to continue with that password. Please double check the letter for your password and try again.', 'alert alert-error');
-      echo $ssd_info;
-      echo $return_to_login;
-    }
-    break;
-  case "step3":
-    $start_date = required_param_array('course_start_date', PARAM_INT);
-    $start_date_stamp = mktime(12, 0, 0, $start_date['month'], $start_date['day'], $start_date['year']);
-    $cutoff_date = time() + (6 * 7 * 24 * 60 * 60); // 6 weeks, 7 days, 24 hours, 60 minutes, 60 seconds
-    $leeway = (7 * 24 * 60 * 60); // 1 week
-    
-    $cutoff_remainder = $cutoff_date - $start_date_stamp;
-    
-    $leeway = $leeway + $cutoff_remainder;
-    
-    // If cutoff_remainder is negative, still time remaining for loading. Add leeway and check it's still negative
-    if ($cutoff_remainder < 0 && $cutoff_remainder + $leeway < 0)
-    {
-      echo $OUTPUT->box('Your course start date is too far in the future. Your course is unlikely to ready or your account may not exist yet. User accounts and courses on this date are expected around <strong>' . date('jS F o', ($start_date_stamp - (6 * 7 * 24 * 60 * 60))) . '</strong>', 'alert alert-error');
-      echo $ssd_info;
-      echo $return_to_login;
-    }
-    
-    
-    if($cutoff_remainder > 0 || $cutoff_remainder + $leeway > 0)
-    {
-      echo $OUTPUT->box('Finally, please enter your Service Number and Surname into the boxes below. If your course and account are ready your password will be reset for you.');
-      $frm = new login_assistant_form_step3();
-      echo $frm->display();
-    }
-    break;
-  case "step4":
+    $serial_course = required_param('serial-course', PARAM_TEXT);
+    $serial_year = required_param('serial-year', PARAM_TEXT);
+    $serial_class = required_param('serial-class', PARAM_TEXT);
     $servicenumber = required_param('servicenumber', PARAM_TEXT);
     $surname = required_param('surname', PARAM_TEXT);
     
+    $course = $DB->get_record('course', array('idnumber'=>$serial_course));
     $user = $DB->get_record('user', array('auth'=>'manual', 'username'=>$servicenumber, 'mnethostid'=>$CFG->mnet_localhost_id));
-    
-    // Check we found a user, check their lastnames match in lowercase and prevent any site admins from being reset this way
-    if ($user && strtolower($user->lastname) == strtolower($surname) && !is_siteadmin($user) && !$user->deleted) {
-      $password = generate_password();
-      $hashedpassword = hash_internal_user_password($password);
-      // Lets update the user
-      $DB->set_field('user', 'password', $hashedpassword, array('id'=>$user->id));
-      set_user_preference('auth_forcepasswordchange', 1, $user);
-      
-      echo $OUTPUT->box('Please now try and login using the password provided below. Copy and paste the password provided below, be sure to include any punctuation as well.', 'alert alert-success');
-      echo '<div style="width:25%; font-size:1.7em; background:lightyellow; border:1px solid black; padding:1em; text-align:center; margin:1em auto;">' . $password . '</div>';
-      unset($password);
-      
+
+    if (!$course or !$user or $password != $CFG->login_assistant_password)
+    {
+      echo $OUTPUT->box('We were unable to find a match for either the Serial Number or your Service Number. Please contact the Service Support Desk for further assistance.', 'alert alert-error');
+      echo $ssd_info;
       echo $return_to_login;
     }
     else
     {
-      echo $OUTPUT->box('We were unable to find any matching user accounts. Please contact the Service Support Desk below to have this investigated.', 'alert alert-error');
-      echo $ssd_info;
-      echo $return_to_login;
+      $course_context = context_course::instance($course->id);
+      $is_enrolled = is_enrolled($course_context, $user);
+      
+      
+      // Check we found a user, check their lastnames match in lowercase and prevent any site admins from being reset this way
+      if ($user && strtolower($user->lastname) == strtolower($surname) && !is_siteadmin($user) && !$user->deleted && $is_enrolled) {
+        $new_password = generate_password();
+        $hashedpassword = hash_internal_user_password($new_password);
+        // Lets update the user
+        $DB->set_field('user', 'password', $hashedpassword, array('id'=>$user->id));
+        set_user_preference('auth_forcepasswordchange', 1, $user);
+        
+        echo $OUTPUT->box('Please now try and login using the password provided below. Copy and paste the password provided below, be sure to include any punctuation as well.', 'alert alert-success');
+        echo '<div style="width:25%; font-size:1.7em; background:lightyellow; border:1px solid black; padding:1em; text-align:center; margin:1em auto;">' . $new_password . '</div>';
+        unset($new_password);
+        
+        echo $return_to_login;
+      }
+      else
+      {
+        echo $OUTPUT->box('Sorry, we were unable to reset your password. For further assistance please contact the Service Support Desk.', 'alert alert-error');
+        echo $ssd_info;
+        echo $return_to_login;
+      }
     }
     break;
-  case "ssd":
-    echo '<h3>SSD Service Desk</h3>';
 }
 
 echo $OUTPUT->footer();
