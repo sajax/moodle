@@ -34,7 +34,7 @@ class login_assistant_form_step1 extends moodleform {
       
       $mform->addElement('password', 'letterpassword', 'Letter Password');
       $mform->setType('letterpassword', PARAM_TEXT);
-      $mform->addRule('letterpassword', 'Please provide the password on your course acknowledgement letter.', 'required', null, 'client');
+      $mform->addRule('letterpassword', 'Please provide the password on your RSME/Loading Letter.', 'required', null, 'client');
       
       $mform->addElement('text', 'servicenumber', 'Service Number');
       $mform->setType('servicenumber', PARAM_TEXT);
