@@ -48,7 +48,7 @@ $return_to_login = $OUTPUT->continue_button(new moodle_url("$CFG->httpswwwroot/l
 switch ($step) {
   case "step1":
     $frm = new login_assistant_form_step1();
-    echo $OUTPUT->box('<p>If you have received a joining letter but have been unable to login using the password provided, you will be able to reset your password using the following process.</p><p>You will need the Serial Number, Password and Course Start Date provided on the RSME joining letter you have received. Please ensure you enter the serial and password exactly as they appear in the letter.</p>');
+    echo $OUTPUT->box('<p>If you have received your <strong>RSME or Loading Letter</strong> but have been unable to login using the password provided, you will be able to reset your password using the following process.</p><p>You will need the Serial Number, Password and Course Start Date provided on the RSME/Loading letter you have received. Please ensure you enter the serial and password exactly as they appear in the letter.</p>');
     echo $frm->display();
     break;
   case "step2":
