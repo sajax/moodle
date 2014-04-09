@@ -86,6 +86,8 @@ switch ($step) {
         echo '<div style="width:25%; font-size:1.7em; background:lightyellow; border:1px solid black; padding:1em; text-align:center; margin:1em auto;">' . $new_password . '</div>';
         unset($new_password);
         
+        add_to_log(SITEID, 'login', 'password claim', '/user/view.php?id=' . $user->id, $user->username);
+        
         echo $return_to_login;
       }
       else
