@@ -2889,7 +2889,7 @@ function feedback_send_email($cm, $feedback, $course, $userid) {
                                            ORDER BY name ASC", array($course->id, $userid));
         $groups = array_values($groups);
 
-        $teachers = feedback_get_receivemail_users($cm->id, $groups);
+        $teachers = feedback_get_receivemail_users($cm->id);
     } else {
         $teachers = feedback_get_receivemail_users($cm->id);
     }
