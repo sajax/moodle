@@ -16,5 +16,24 @@
 h3.sectionname
 {
 	color:@darkRed;
+    font-weight: normal;
 }
 
+#section-0 h3.sectionname
+{
+    color:@darkRed;
+    font-weight: bold;
+}
+
+h3.section-title a
+{
+    color:@darkRed;
+    font-weight: normal;
+    background:url([[pix:theme|layout/view-more]]) no-repeat right;
+    display: block;
+  
+    &:hover
+    {
+        background:url([[pix:theme|layout/view-more-hover]]) no-repeat right;
+    }
+}
