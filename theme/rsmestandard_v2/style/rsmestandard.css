@@ -1,0 +1,759 @@
+html
+{
+	padding:0;
+	margin:0;
+	background:#FFFFFF url([[pix:theme|background]]) no-repeat fixed;
+}
+body
+{
+	font-family: Arial,sans-serif;
+	font-size:80%;
+	margin:0;
+	padding:0 0 1.5em 0;
+	
+	color:#000000;
+}
+
+a
+{
+	text-decoration:none;
+}
+
+a:link, a:visited
+{
+	color:#705644;
+}
+
+a:active, a:hover
+{
+	color:#c80106;
+}
+
+#page-header-banner
+{
+	background:#000000 url([[pix:theme|tmp_logo]]);
+	padding:0;
+	margin:0;
+	height:98px;
+	border-bottom:1px solid #000000;
+}
+
+#page
+{
+	background:#725E50;
+	width:90%;
+	margin:auto;
+	padding:0 0 1em 0;
+}
+
+.pagelayout-report #page-content #region-main
+{
+	overflow:visible;
+}
+
+.pagelayout-report #page
+{
+	width:100%;
+	padding:1px;
+}
+
+.pagelayout-redirect #page
+{
+	margin-top:2em;
+	padding-top:1em;
+}
+
+.pagelayout-redirect #inner_page
+{
+	border-top:1px solid #4B3D34;
+}
+
+.pagelayout-redirect .region-content
+{
+	padding:1em;
+}
+
+#inner_page
+{
+	background:#FAFAFA;
+	margin:0 1em;
+	border-left:1px solid #4B3D34;
+	border-right:1px solid #4B3D34;
+	border-bottom:1px solid #4B3D34;
+	position:relative;
+}
+
+.pagelayout-report #inner_page
+{
+	margin:0 0;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+}
+
+.navbar
+{
+	padding:0.2em 0.5em;
+	background:#E8E8E8;
+	font-size:0.9em;
+	border-bottom:1px solid #CCC;
+	height:25px;
+	line-height:25px;
+}
+
+.block
+{
+	
+	border:1px solid #999;
+}
+
+.block .content
+{
+	background:#E8E8E8 url([[pix:theme|underGradient]]) top repeat-x;
+}
+
+.block .header h2
+{
+	margin:0 4px;
+	font-size:1.2em;
+}
+
+.coursebox, .generalbox, .forumpost, .course_category_tree, .mform  fieldset, .course-content ul.topics li.section, .course-content ul.weeks li.section, .mod_introbox, .userprofile, #coursesearch, .backlink, .userinfobox
+{
+	background:#E8E8E8;
+	border:1px solid #CCC;
+}
+
+.generalbox, .userprofile
+{
+	padding:0.8em;
+}
+
+.coursebox .info, .coursebox .summary
+{
+	display:block;
+	float:none;
+	padding:0.5em;
+}
+
+.generalbox 
+{
+	margin-bottom:1.5em;
+}
+
+ul.teachers
+{
+	display:none;
+}
+
+.header, .path-grade-report-grader table tr.heading th.header, table#user-grades th.item, table#user-grades th.categoryitem, table#user-grades th.courseitem
+{
+	background:#725E50 url([[pix:theme|custommenu]]) bottom repeat-x;
+	color:#FAFAFA;
+	padding:0.3em 0;
+}
+
+.header a, path-grade-report-grader table tr.heading th.header a, table#user-grades th.item a, table#user-grades th.categoryitem a, table#user-grades th.courseitem a
+{
+	color:#FAFAFA;
+}
+
+h2.headingblock
+{
+	padding:0.5em;
+	margin:0;
+}
+
+p.tree_item
+{
+	color:#725E50;
+}
+
+p.root_node, p.navigation_node
+{
+	color:#725E50;
+	font-weight:bold;
+}
+
+.sitetopic
+{
+	padding:0.8em;
+}
+
+#page-footer
+{
+	background:#E5E5E5;
+	border-top:1px solid #999;
+}
+
+.forumpost .commands, .forumpost .link, .forumpost .content, .forumpost .attachments
+{
+	margin:0.5em;
+}
+
+.forumpost .author a
+{
+	color:#FAFAFA;
+	font-weight:bold;
+}
+
+.forumpost .author a:hover
+{
+	color:#c80106;
+}
+
+.form-label label
+{
+	font-weight:bold;
+}
+
+label .form-shortname
+{
+	font-weight:normal;
+}
+
+/*.mform .fitem fieldset.fgroup label, .mform .fradio label, .mform .fcheckbox label, .mform fieldset.fdate_selector label
+{
+	margin-left:1em;
+}*/
+
+.mform fieldset.hidden
+{
+	border-width:1px;
+}
+
+.welcome_message
+{
+	background:#dce8f9 url(images/icons/lightbulb_48.png) no-repeat 12px;
+	border-bottom:2px solid #3593dc;
+	color:#3593dc;
+	padding:1.5em 1em 1.5em 5em;
+}
+
+.notifysuccess {
+	background: green;
+	color: #fff;
+	padding: 0.8em;
+	width: 75%;
+	margin: .5em auto;
+	text-align:center;
+}
+
+.notifysuccess a
+{
+	font-weight:bold;
+}
+
+.loginerrors {
+	background: #c80106;
+	color: #fff;
+	padding: 0.8em;
+	width: 75%;
+	margin: .5em auto;
+	text-align:center;
+}
+
+.course-content ul.topics li.section .content, .course-content ul.weeks li.section .content
+{
+	padding-bottom:0.5em;
+}
+
+.course-content ul.topics li.current, .course-content ul.weeks li.current
+{
+	border:1px solid #725E50;
+	background:#EDE7D1;
+}
+
+#page-content .logininfo
+{
+	text-align:right;
+	font-size:0.8em;
+	padding:0.3em 0.5em;
+	margin:0;
+}
+
+.logininfo a, #page-content .loginfailures a
+{
+	font-weight:bold;
+}
+
+#page-content .loginfailures
+{
+	float:right;
+	font-size:0.8em;
+	padding:0.3em 0.5em;
+	margin:0;
+	
+	color:#c80106;
+}
+	
+
+.course-content ul.topics li.section .side, .course-content ul.weeks li.section .side
+{
+	font-weight:bold;
+	font-size:1.1em;
+}
+
+.course-content ul.topics li.section .side, .course-content ul.topics li.section .content, .course-content ul.weeks li.section .side, .course-content ul.weeks li.section .content
+{
+	padding:12px 0;
+}
+
+.course-content ul.topics li.section .content h3, .course-content ul.weeks li.section .content h3, .course-content ul.topics li.section .content h4, .course-content ul.weeks li.section .content h4, .course-content ul.topics li.section .content h5, .course-content ul.weeks li.section .content h5
+{
+	padding:0 0 0.5em 0;
+	margin:0;
+}
+
+/* Footer */
+#page-footer .logininfo, #page-footer .siteinfo
+{
+	padding:0.5em 1em;
+	
+}
+
+.helplink
+{
+	text-align:right;
+}
+
+.pagetitle
+{
+	float:left;
+	text-align:left;
+	font-weight:bold;
+	color:#666;
+}
+
+/*.mform .fitem .fsubmit, .mform .fitem .fgroup, .mform .fitem fieldset.felement
+{
+	text-align:center;
+	margin:0;
+	width:100%;
+}*/
+
+.initialbar
+{
+	text-align:center;
+	font-size:1.1em;
+	margin-bottom:1em;
+}
+
+.initialbar a, .initialbar strong
+{
+	padding:0.5em;
+}
+
+/* Table */
+.submissions td.c0, .submissions td.c2, .submissions td.c4, .submissions td.c6, .submissions td.c8, .submissions td.c10, .submissions td.c12, .submissions td.c14, .submissions td.c16
+{
+	background:#F2F2F2;
+	padding:8px;
+}
+.submissions td.c1, .submissions td.c3, .submissions td.c5, .submissions td.c7, .submissions td.c9, .submissions td.c11, .submissions td.c13, .submissions td.c15, .submissions td.c17
+{
+	background:#E8E8E8;
+	padding:8px;
+}
+table.submissions tr
+{
+	border-bottom:1px solid #CCC;
+}
+
+table.submissions tr tr.ygtvrow
+{
+	border-bottom:none;
+}
+
+table.userenrolment .subfield_firstname
+{
+	font-weight:bold;
+}
+/*table.userenrolment .subfield_email
+{
+	clear:left;
+}*/
+
+/* Grading Highlight */
+.s0
+{
+	background:#f7c2c2;
+	text-align:center;
+	padding:0.3em;
+}
+.s1
+{
+	background:#dce8f9;
+	text-align:center;
+	padding:0.3em;
+}
+
+#completionprogressid
+{
+	display:none;
+}
+
+.backup_progress
+{
+	margin:0.8em 0;
+}
+
+.mform fieldset legend
+{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/*font-weight:normal;
+	font-size:1.2em;*/
+}
+
+.generaltable
+{
+	width:100%;
+	border:1px solid #CCC;
+	background:#FAFAFA;
+}
+
+tr.plugintypeheader  th.displayname 
+{
+	background:#c80106 none;
+	font-weight:bold;
+	color:#FAFAFA;
+}
+
+.formtable tbody th, .generaltable th.header
+{
+	padding:0.4em;
+}
+
+table tbody tr.r0 th.header, .generaltable tr.r0, #categoryquestions tr.r0, .userenrolment tr.r0
+{
+	background:#F2F2F2;
+	color:#000000;
+}
+
+table tbody tr.r1 th.header, .generaltable tr.r1, #categoryquestions tr.r1, .userenrolment tr.r1
+{
+	background:#E8E8E8;
+	color:#000000;
+}
+.generaltable tr.r0, .generaltable tr.r1, .userenrolment tr.r0, .userenrolment tr.r1
+{
+	border-bottom:1px solid #CCC;
+
+	border-left:1px solid #CCC;
+}
+
+.userenrolment  .cell
+{
+	border-right:1px solid #CCC;
+	
+}
+
+.userenrolment .col_lastseen
+{
+	padding:0.5em;
+}
+
+#categoryquestions tr.r0 td, #categoryquestions tr.r1 td
+{
+	padding:0.5em;
+}
+
+/* Forms */
+.fitem  input, .fitem  select, .fitem  span label, .mform .fcheckbox input
+{
+	margin-right:0.5em;
+}
+.fcontainer .fgroup br
+{
+	margin-bottom:0.4em;
+}
+
+/* Buttons */
+
+.messagebox a
+{
+	padding:0.5em;
+	border:1px solid #000000;
+	background:#725E50 url([[pix:theme|custommenu]]) bottom repeat-x;
+	font-weight:bold;
+	color:#FAFAFA;
+	margin:1em 0;
+}
+.messagebox a:hover
+{
+	background:#c80106 none;
+}
+
+.userprofile .label
+{
+	font-weight:bold;
+}
+
+#page-admin-index .copyright
+{
+	text-align:center;
+}
+
+.form-defaultinfo
+{
+	color:#725E50;
+}
+
+.generaltable div input
+{
+	margin-right:0.4em;
+}
+
+.loginbox .loginform .form-input input
+{
+	padding:2px 4px;
+	width:60%;
+	margin:4px;
+}
+
+#coursesearch
+{
+	padding:1em;
+	width:40%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.categorypicker
+{
+	text-align:center;
+}
+
+.block_settings .block_tree .tree_item
+{
+	margin:6px 0;
+}
+
+.commands a
+{
+	margin:0 3px;
+}
+
+.categorylist, .category, .courses, .course_link
+{
+	margin:0.4em;
+}
+
+#page-site-index .headingblock
+{
+	margin-bottom:0;
+}
+
+h2.main
+{
+	text-align:center;
+}
+
+hr
+{
+	border-top:1px dotted #4B3D34;
+	border-bottom:none;
+	border-left:none;
+	border-right:none;
+	background:transparent;
+}
+
+/* Course Page */
+.path-course-view .headingblock
+{
+	margin-bottom:0;
+}
+
+.course-content ul.topics li#section-0, .course-content ul.weeks li#section-0
+{
+	margin-top:0;
+	background:#E8E8E8;
+	padding-top:1px;
+}
+.unlist, .unlist li, .inline-list, .inline-list li, .block .list, .block .list li, .sitetopic .section li.activity, .course-content .section li.activity, .tabtree li
+{
+	margin:0 0 0.5em 0;
+}
+
+.course-content .section li.modtype_label
+{
+	padding-top:0.9em;
+}
+
+.course-content .section li.activity .contentafterlink
+{
+	margin:0.5em 0 0 1.7em;
+}
+
+/* Calendar */
+.calendartable th, .calendartable td
+{
+	border-color:#E8E8E8;
+}
+
+.calendartable .dayblank
+{
+	background:#CCC;
+}
+
+.calendartable .weekend
+{
+	background:#f7c2c2;
+}
+
+.calendartable .weekdays
+{
+	background:#725E50 url([[pix:theme|custommenu]]) bottom repeat-x;
+	color:#FAFAFA;
+}
+
+/* Redirect Page */
+.pagelayout-redirect .redirectmessage, .pagelayout-redirect .continuebutton
+{
+	text-align:center;
+}
+
+/* Form Spacing */
+.mform .fitem .fitemtitle
+{
+	margin-right:0.4em;
+}
+.mform .fitem
+{
+	margin-top:0.6em;
+}
+
+.mform .fitem fieldset.felement
+{
+	padding-left:0;
+}
+
+.singleselect select.menumoveto
+{
+	width:100%;
+}
+
+.buttons
+{
+	text-align:center;
+}
+
+.form-multicheckbox label
+{
+	margin-left:0.5em;
+}
+.form-multicheckbox ul li
+{
+	margin-bottom:0.25em;
+}
+
+.paging, .path-admin-report .info
+{
+	text-align:center;
+	margin:0.5em 0;
+}
+
+#adminsettings .form-item
+{
+	border-bottom:1px dotted black;
+	padding-bottom:1em;
+}
+.backlink
+{
+	padding:0.5em;
+	font-weight:bold;
+}
+
+.subfield 
+{
+	margin:0.5em 0;
+}
+
+.userenrolment .col_userdetails .subfield_picture
+{
+	height:100%;
+}
+
+.yui3-widget
+{
+	background:#E8E8E8;
+	border:1px solid #CCC;
+	padding:0.4em;
+}
+
+.user-grade td.oddd1
+{
+	background:#E8E8E8;
+}
+
+.backup-restore .activitytable
+{
+	min-width:0;
+	width:80%;
+}
+
+ul.section
+{
+	list-style:none;
+}
+
+li.clipboard
+{
+	background:#DCE8F9;
+	border-right:1px solid #3593DC;
+	border-left:1px solid #3593DC;
+	padding:8px;
+	text-align:right;
+	font-weight:bold;
+	list-style-image:url([[pix:core|i/info]]);
+}
+
+#page-mod-scorm-player #altfinishlink
+{
+	font-weight:bold;
+	padding:1em !important;
+}
+
+/* Form */
+input[type=text], input[type=password], textarea
+{
+	background:white url([[pix:theme|form_grad]]) repeat-x top;
+	border:1px solid #999;
+	padding:4px;
+	-webkit-border-radius: 4px;   
+    border-radius: 4px;
+}
+
+/* Menu */
+.block_navigation .block_tree
+{
+	overflow:auto;
+}
+.block_navigation .block_tree LI
+{
+	overflow:visible;
+}
+/* Warning */
+.notice-yellow
+{
+	background:#ffffcb url([[pix:theme|warning_48]]) no-repeat 12px;
+	border-bottom:2px solid #bcbb00;
+	color:#000000;
+	padding:1.5em 1em 1.5em 6.5em;
+margin:1em;
+}
+
+.path-course-view .section, .generalbox
+{
+	line-height:1.6em;
+}
+
+.path-course-view .section .summary li, .generalbox
+{
+	margin:0.5em 0;
+}
+
+.course-content ul.section
+{
+	margin:0;
+}

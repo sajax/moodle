@@ -1,0 +1,67 @@
+.path-mod-forum .forumheaderlist
+{
+	background-color:#E8E8E8;
+	border:1px solid #CCC;
+}
+/* Removes redundant border */
+.path-mod-forum .forumheaderlist .discussion .starter
+{
+	border-left:none;
+}
+/* Change Border Colour */
+.path-mod-forum .forumheaderlist td
+{
+	border-color:#CCC;
+}
+/* Add Padding Beneath Failed Object Display */
+.resourcecontent, .mod_introbox
+{
+	margin-bottom:1em;
+}
+/* Page Padding */
+.path-mod  .generalbox 
+{
+	padding:1em;
+}
+
+/* Choice Menu */
+.path-mod ul.choices
+{
+	text-align:center;
+}
+.path-mod li.option label 
+{
+	padding:0 0 0 0.5em;
+}
+.path-mod li.option 
+{
+	margin:0 0 0.5em 0;
+}
+#page-mod-choice-view div.region-content form
+{
+	text-align:center;
+}
+
+/* Glossary */
+.path-mod .entrybox
+{
+	text-align:center;
+}
+#page-mod-glossary-view .glossarycontrol
+{
+	margin:1em;
+}
+#page-mod-glossary-view .glossarysearchbox label
+{
+	margin-left:0.5em;
+}
+/* Feedback */
+.path-mod .feedback_item_radio_v_left
+{
+	margin-bottom:0.6em;
+}
+
+.path-mod .feedback_item_label_left, #page-mod-feedback-complete .boxalign_left p
+{
+	font-weight:bold;
+}

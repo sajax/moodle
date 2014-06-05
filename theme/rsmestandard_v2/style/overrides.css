@@ -1,0 +1,150 @@
+.block_settings .block_tree .tree_item
+{
+	margin:6px 0;
+}
+
+.commands a
+{
+	margin:0 3px;
+}
+
+.categorylist, .category, .courses, .course_link
+{
+	margin:0.4em;
+}
+
+#page-site-index .headingblock
+{
+	margin-bottom:0;
+}
+
+h2.main
+{
+	text-align:center;
+}
+
+hr
+{
+	border-top:1px dotted #4B3D34;
+	border-bottom:none;
+	border-left:none;
+	border-right:none;
+	background:transparent;
+}
+
+/* Course Page */
+.path-course-view .headingblock
+{
+	margin-bottom:0;
+}
+
+.course-content ul.topics li#section-0
+{
+	margin-top:0;
+	background:#E8E8E8;
+	padding-top:1px;
+}
+.unlist, .unlist li, .inline-list, .inline-list li, .block .list, .block .list li, .sitetopic .section li.activity, .course-content .section li.activity, .tabtree li
+{
+	margin:0 0 0.5em 0;
+}
+
+.course-content .section li.modtype_label
+{
+	/*font-weight:bold;*/
+	padding-top:0.9em;
+}
+
+.course-content .section li.activity .contentafterlink
+{
+	margin:0.5em 0 0 1.7em;
+}
+
+/* Calendar */
+.calendartable th, .calendartable td
+{
+	border-color:#E8E8E8;
+}
+
+.calendartable .dayblank
+{
+	background:#CCC;
+}
+
+.calendartable .weekend
+{
+	background:#f7c2c2;
+}
+
+.calendartable .weekdays
+{
+	background:#725E50 url([[pix:theme|custommenu]]) bottom repeat-x;
+	color:#FAFAFA;
+}
+
+/* Redirect Page */
+.pagelayout-redirect .redirectmessage, .pagelayout-redirect .continuebutton
+{
+	text-align:center;
+}
+
+/* Form Spacing */
+.mform .fitem .fitemtitle
+{
+	margin-right:0.4em;
+}
+.mform .fitem
+{
+	margin-top:0.6em;
+}
+
+.mform .fitem fieldset.felement
+{
+	padding-left:0;
+}
+
+.singleselect select.menumoveto
+{
+	width:100%;
+}
+
+.buttons
+{
+	text-align:center;
+}
+
+.form-multicheckbox label
+{
+	margin-left:0.5em;
+}
+.form-multicheckbox ul li
+{
+	margin-bottom:0.25em;
+}
+
+.paging, .path-admin-report .info
+{
+	text-align:center;
+	margin:0.5em 0;
+}
+
+.forgetpass
+{
+	background:#ffffcb;
+	border-top:2px solid #bcbb00;
+	border-bottom:2px solid #bcbb00;
+	font-size:1.2em;
+	font-weight:bold;
+	margin:0.5em 0;
+	padding:1em;
+}
+
+.forgetpass a
+{
+	color:#1a1a1a;
+}
+
+.feedback_anonymousinfo
+{
+	display:none;
+}

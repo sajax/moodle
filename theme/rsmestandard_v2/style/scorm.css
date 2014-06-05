@@ -1,0 +1,9 @@
+#scorm_content object, #page-mod-scorm-player .yui-layout-scroll div.yui-layout-bd, #page-mod-scorm-player .yui-layout .yui-layout-wrap, #page-mod-scorm-player .yui-layout-unit, #page-mod-scorm-player .yui-layout-doc
+{
+	min-width:1041px;
+	min-height:758px;
+	margin:auto;
+	/*background:none !important;
+	border:none !important;
+	overflow:visible;*/
+}

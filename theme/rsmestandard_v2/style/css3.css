@@ -1,0 +1,17 @@
+.block, .block .content, #page
+{
+	-webkit-border-radius: 2px 2px 5px 5px;
+	border-radius: 2px 2px 5px 5px;
+}
+
+#coursesearch
+{
+	-webkit-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+/*.block
+{
+	-webkit-box-shadow:  1px 1px 1px 1px rgba(0, 0, 0, 0.15);
+	box-shadow:  1px 1px 1px 1px rgba(0, 0, 0, 0.15);
+}*/

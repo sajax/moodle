@@ -15,13 +15,6 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Essential theme with the underlying Bootstrap theme.
- *
- * @package    theme
- * @subpackage Essential
- * @author     Julian (@moodleman) Ridden
- * @author     Based on code originally written by G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
  class theme_rsme_standard_v3_core_renderer extends theme_bootstrapbase_core_renderer {
@@ -388,3 +381,4 @@ s.parentNode.insertBefore(g,s);
 		return $code;
 	}
 }
+

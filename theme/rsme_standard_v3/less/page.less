@@ -54,76 +54,110 @@ a:hover, a:focus
 	box-shadow:none;
 }
 
-.courses .coursebox
-{
-	background:none;
-	
-	border:0;
-	padding:4px;
-	margin:1em;
-	
-	
-	border-radius:0;
-	
-	border:2px solid @grey;
-	
-}
-
-.coursebox > .info > h3.coursename
-{
-	width:100%;
-	
-	
-	
-	
-	margin:0;
-	padding:0;
-	
-	font-size:1.4em;
-
-	a
-	{
-		background:none;
-		padding-left:0;
-		
-		color:darken(@mediumGreen,7%);
-		
-		margin:0 0 0 6px;
-	}
-}
-
-.coursebox .content .courseimage img
-{
-	max-width:100%;
-	max-height:100%;
-	border:1px solid @darkGreen;
-}
-
-.coursebox .content .courseimage, .coursebox .content .coursefile
-{
-	float:right;
-	text-align:right;
-	clear:right;
-	width:25%;
-}
-
-.coursebox .content .summary, .coursebox .content .coursecat
-{
-	font-size:0.85em;
-	float:left;
-	padding:0;
-	width:70%;
-}
-
-.coursebox .content .teachers
-{
-	display:none;
-}
+@course-image-width: 150px;
 
 .courses .coursebox.even
 {
-	background:@grey;
-	border-color:darken(@grey,5%);
+    background: @white;
+}
+
+.coursebox
+{
+    padding:0;
+    margin:1em;
+    
+    border:2px solid @darkGray;
+    
+    border-radius:0;
+    
+    h3
+    {
+        font-size:1.5em;
+        font-weight: 300;
+        margin: 0;
+        padding: 5px;
+        
+        a
+        {
+            color:@darkRed;
+        }
+    }
+    
+    .course-details p
+    {
+        padding:5px;   
+    }
+    
+    .course-image
+    {
+        
+        > div.course-sidebar
+        {
+            width:150px;
+
+            ul
+            {
+                list-style: none;
+                margin:0.5em 0.4em;
+                padding:0;
+            }
+
+            .course-sidebar-heading
+            {
+                background:@darkGray;
+                font-weight:bold;
+                color: @grayFont;
+                padding:3px;
+            }
+        }
+        
+        float:right;
+        background: @gray;
+        border-radius: 0;
+        
+        border-left:1px solid @darkGray;
+        
+        font-size: 0.8em;
+        
+        img.course-thumb 
+        {
+            width:@course-image-width;
+        }
+    }
+    
+    .course-box-bar
+    {
+        padding: 4px;
+        
+        ul
+        {
+            display: inline;
+            li
+            {
+                display: inline;
+                margin: 0 0.25em;
+                a
+                {
+
+                }
+            }
+        }
+        
+        .fp-filename-icon
+        {
+            display:inline;
+            
+            .fp-icon
+            {
+                float:none;
+            }
+        }
+    }
+}
+
+.courses .coursebox:hover, .course_category_tree .courses
+{
+    background: @white;   
 }
 
 #region-main .sitetopic
